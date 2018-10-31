@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>IDMPhotoBrowserBindings</id>
+    <version>1.11.3</version>
+    <title>IDMPhotoBrowser for Xamarin.iOS</title>
+    <authors>Softeq Development Corp.</authors>
+    <owners>Softeq Development Corp.</owners>
+    <licenseUrl>https://github.com/Softeq/IDMPhotoBrowser-xamarin-ios/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Softeq/IDMPhotoBrowser-xamarin-ios</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Xamarin iOS binding library of IDMPhotoBrowser - Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, image progress and more.</description>
+    <copyright>Copyright 2018 Softeq Development Corp.</copyright>
+    <tags>IDMPhotoBrowser ios xamarin binding softeq library uikit ui framework photo image viewer</tags>
+    <releaseNotes>First release</releaseNotes>
+  </metadata>
+  <files>
+    <file src="bin/Release/IDMPhotoBrowserBindings.dll" target="lib/Xamarin.iOS10/IDMPhotoBrowserBindings.dll" />
+  </files>
+</package>
