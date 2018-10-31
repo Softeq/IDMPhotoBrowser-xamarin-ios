@@ -14,7 +14,4 @@
     <tags>IDMPhotoBrowser ios xamarin binding softeq library uikit ui framework photo image viewer</tags>
     <releaseNotes>First release</releaseNotes>
   </metadata>
-  <files>
-    <file src="bin/Release/IDMPhotoBrowserBindings.dll" target="lib/Xamarin.iOS10/IDMPhotoBrowserBindings.dll" />
-  </files>
 </package>
