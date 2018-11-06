@@ -15,7 +15,11 @@ Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, 
 
 ## Installation
 
-// WIP
+NuGet:
+
+```
+Install-Package IDMPhotoBrowserBindings
+```
 
 ## Basic Examples
 
