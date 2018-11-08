@@ -2,6 +2,8 @@
 
 Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, image progress and more.
 
+[![NuGet Badge](https://buildstats.info/nuget/IDMPhotoBrowserBindings)](https://www.nuget.org/packages/IDMPhotoBrowserBindings/)
+
 ## Screenshots
 
 [![Alt][screenshot2_thumb]][screenshot2]    [![Alt][screenshot3_thumb]][screenshot3]    [![Alt][screenshot5_thumb]][screenshot5]
