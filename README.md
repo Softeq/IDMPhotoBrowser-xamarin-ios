@@ -2,6 +2,7 @@
 
 Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, image progress and more.
 
+[![Build Status](https://dev.azure.com/SofteqDevelopment/IDMPhotoBrowser-xamarin-ios/_apis/build/status/Check%20Master%20Branch?branchName=master)](https://dev.azure.com/SofteqDevelopment/IDMPhotoBrowser-xamarin-ios/_build/latest?definitionId=6?branchName=master)
 [![NuGet Badge](https://buildstats.info/nuget/IDMPhotoBrowserBindings)](https://www.nuget.org/packages/IDMPhotoBrowserBindings/)
 
 ## Screenshots
