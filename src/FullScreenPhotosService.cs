@@ -35,7 +35,7 @@ namespace IDMPhotoBrowserBindings
             fullScreenPhotosViewController.Delegate = new CustomIDMPhotoBrowserDelegate
             {
                 IsPortraitOnly = IsPortraitOnly
-            };
+            };lahfjkahfajflasd
 
             _getTopViewControllerFunc()?.PresentViewController(fullScreenPhotosViewController, true, () => {});
         }
