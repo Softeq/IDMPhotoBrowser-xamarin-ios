@@ -1,0 +1,3 @@
+variables:
+  DOTNET_VERSION: 6.0.300
+  MACOS_VM_IMAGE: 'macos-12'

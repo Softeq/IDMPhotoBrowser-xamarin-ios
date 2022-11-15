@@ -1,0 +1,40 @@
+resources:
+- repo: self
+trigger:
+  branches:
+    include:
+      - '*'
+  paths:
+    exclude:
+      - '**/*.md'
+
+variables:
+- template: templates/vars.yml
+
+jobs:
+- job: macOS
+  pool:
+    vmImage: $(MACOS_VM_IMAGE)
+  steps:
+    - task: UseDotNet@2
+      displayName: .NET Version
+      inputs:
+        packageType: 'sdk'
+        version: '$(DOTNET_VERSION)'
+
+    - task: Bash@3
+      displayName: Install MAUI
+      inputs:
+        targetType: 'inline'
+        script: |
+          dotnet nuget locals all --clear
+          dotnet workload install ios \
+            --source https://aka.ms/dotnet6/nuget/index.json \
+            --source https://api.nuget.org/v3/index.json
+
+    - task: Bash@3
+      displayName: Build iOS App
+      inputs:
+        targetType: 'inline'
+        script: |
+          dotnet build -f net6.0-ios -c Release
