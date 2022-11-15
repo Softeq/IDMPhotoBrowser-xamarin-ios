@@ -4,12 +4,25 @@
     <IsBindingProject>true</IsBindingProject>
     <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
 
-    <!-- Assembly Info -->
-    <Product>IDMPhotoBrowserBindings</Product>
+    <!-- Assembly & NuGet Info -->
+    <Title>IDMPhotoBrowser for Xamarin.iOS</Title>
+    <Description>Xamarin iOS binding library of IDMPhotoBrowser - Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, image progress and more.</Description>
     <Company>Softeq Development Corporation</Company>
     <Copyright>Copyright © 2018 Softeq Development Corporation</Copyright>
     <Version>1.11.3.1</Version>
+    <Authors>Softeq Development Corp.</Authors>
+    <Owners>Softeq Development Corp.</Owners>
+    <PackageProjectUrl>https://github.com/Softeq/IDMPhotoBrowser-xamarin-ios</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>ios;xamarin binding;softeq;library;uikit;ui;photo;image viewer</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Migration to .Net6</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../LICENSE" Visible="False" Pack="true" PackagePath="" />
+    <None Include="../README.md" Visible="False" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
