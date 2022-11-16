@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-ios</TargetFramework>
+    <TargetFramework>net6.0-ios10</TargetFramework>
     <IsBindingProject>true</IsBindingProject>
     <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
 
@@ -9,7 +9,7 @@
     <Description>Xamarin iOS binding library of IDMPhotoBrowser - Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, image progress and more.</Description>
     <Company>Softeq Development Corporation</Company>
     <Copyright>Copyright © 2018 Softeq Development Corporation</Copyright>
-    <Version>1.11.3.1</Version>
+    <Version>1.11.3.2</Version>
     <Authors>Softeq Development Corp.</Authors>
     <Owners>Softeq Development Corp.</Owners>
     <PackageProjectUrl>https://github.com/Softeq/IDMPhotoBrowser-xamarin-ios</PackageProjectUrl>

@@ -26,4 +26,4 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          dotnet build -f net6.0-ios -c Release -v Detailed
+          dotnet build -c Debug -v Detailed
