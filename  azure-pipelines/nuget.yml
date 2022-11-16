@@ -1,10 +1,9 @@
-resources:
-- repo: self
 trigger: none
 pr: none
 
 variables:
-- template: templates/vars.yml
+  DOTNET_VERSION: 6.0.300
+  MACOS_VM_IMAGE: 'macos-12'
 
 jobs:
 - job: macOS
