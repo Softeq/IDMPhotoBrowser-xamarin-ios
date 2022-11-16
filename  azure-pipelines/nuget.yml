@@ -17,6 +17,13 @@ jobs:
         version: '$(DOTNET_VERSION)'
 
     - task: Bash@3
+      displayName: Install .NET Workloads
+      inputs:
+        targetType: 'inline'
+        script: |
+          dotnet workload install ios
+
+    - task: Bash@3
       displayName: Pack Library
       inputs:
         targetType: 'inline'

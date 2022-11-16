@@ -22,14 +22,11 @@ jobs:
         version: '$(DOTNET_VERSION)'
 
     - task: Bash@3
-      displayName: Install MAUI
+      displayName: Install .NET Workloads
       inputs:
         targetType: 'inline'
         script: |
-          dotnet nuget locals all --clear
-          dotnet workload install ios \
-            --source https://aka.ms/dotnet6/nuget/index.json \
-            --source https://api.nuget.org/v3/index.json
+          dotnet workload install ios
 
     - task: Bash@3
       displayName: Build iOS App
