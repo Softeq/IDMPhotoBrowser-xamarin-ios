@@ -1,10 +1,15 @@
 trigger:
+  batch: true
   branches:
     include:
-      - '*'
+      - master
+      - release/*
   paths:
+    include:
+      - '*'
     exclude:
       - '**/*.md'
+# pr: by default runs on each commit (with autoCancel) for all branches
 
 variables:
 - template: templates/vars.yml
