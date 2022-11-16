@@ -26,4 +26,4 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          dotnet build -c Release -v Detailed
+          dotnet build -c Debug -v Detailed
