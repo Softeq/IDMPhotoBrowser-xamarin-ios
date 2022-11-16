@@ -2,26 +2,14 @@ trigger: none
 pr: none
 
 variables:
-  DOTNET_VERSION: 6.0.300
-  MACOS_VM_IMAGE: 'macos-12'
+- template: templates/vars.yml
 
 jobs:
 - job: macOS
   pool:
     vmImage: $(MACOS_VM_IMAGE)
   steps:
-    - task: UseDotNet@2
-      displayName: .NET Version
-      inputs:
-        packageType: 'sdk'
-        version: '$(DOTNET_VERSION)'
-
-    - task: Bash@3
-      displayName: Install .NET Workloads
-      inputs:
-        targetType: 'inline'
-        script: |
-          dotnet workload install ios
+    - template: templates/setup-dotnet.yml
 
     - task: Bash@3
       displayName: Pack Library
