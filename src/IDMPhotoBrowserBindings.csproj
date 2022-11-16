@@ -1,83 +1,62 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7B90F06-F1FF-4651-B5CF-136545995266}</ProjectGuid>
-    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>IDMPhotoBrowserBindings</RootNamespace>
-    <AssemblyName>IDMPhotoBrowserBindings</AssemblyName>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <TargetFramework>net6.0-ios</TargetFramework>
+    <IsBindingProject>true</IsBindingProject>
+    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+
+    <!-- Assembly & NuGet Info -->
+    <Title>IDMPhotoBrowser for Xamarin.iOS</Title>
+    <Description>Xamarin iOS binding library of IDMPhotoBrowser - Photo Browser / Viewer inspired by Facebook's and Tweetbot's, swipe-to-dismiss, image progress and more.</Description>
+    <Company>Softeq Development Corporation</Company>
+    <Copyright>Copyright © 2018 Softeq Development Corporation</Copyright>
+    <Version>1.11.3.1</Version>
+    <Authors>Softeq Development Corp.</Authors>
+    <Owners>Softeq Development Corp.</Owners>
+    <PackageProjectUrl>https://github.com/Softeq/IDMPhotoBrowser-xamarin-ios</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageTags>ios;xamarin binding;softeq;library;uikit;ui;photo;image viewer</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Migration to .Net6</PackageReleaseNotes>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Xamarin.iOS" />
-    <Reference Include="System.Core" />
+    <None Include="../LICENSE" Visible="False" Pack="true" PackagePath="" />
+    <None Include="../README.md" Visible="False" Pack="true" PackagePath="" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="libs\DACircularProgress.linkwith.cs">
-      <DependentUpon>DACircularProgress.a</DependentUpon>
-    </Compile>
-    <Compile Include="libs\IDMPhotoBrowser.linkwith.cs">
-      <DependentUpon>IDMPhotoBrowser.a</DependentUpon>
-    </Compile>
-    <Compile Include="libs\Pop.linkwith.cs">
-      <DependentUpon>Pop.a</DependentUpon>
-    </Compile>
-    <Compile Include="libs\SDWebImage.linkwith.cs">
-      <DependentUpon>SDWebImage.a</DependentUpon>
-    </Compile>
-    <Compile Include="FullScreenPhotosService.cs" />
-    <Compile Include="FullScreenPhotosViewController.cs" />
-  </ItemGroup>
+
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
+
   <ItemGroup>
-    <ObjcBindingCoreSource Include="Structs.cs" />
+    <None Update="libs\*.a" Visible="False" />
   </ItemGroup>
+
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="libs\DACircularProgress.a" />
-    <ObjcBindingNativeLibrary Include="libs\IDMPhotoBrowser.a" />
-    <ObjcBindingNativeLibrary Include="libs\Pop.a" />
-    <ObjcBindingNativeLibrary Include="libs\SDWebImage.a" />
+    <NativeReference Include="libs\DACircularProgress.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+      <Frameworks>QuartzCore</Frameworks>
+    </NativeReference>
+    <NativeReference Include="libs\IDMPhotoBrowser.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+      <Frameworks>MessageUI QuartzCore SystemConfiguration MobileCoreServices Security</Frameworks>
+    </NativeReference>
+    <NativeReference Include="libs\Pop.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+      <IsCxx>True</IsCxx>
+      <LinkerFlags>-ObjC</LinkerFlags>
+    </NativeReference>
+    <NativeReference Include="libs\SDWebImage.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+      <Frameworks>ImageIO</Frameworks>
+    </NativeReference>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\IDMPBLocalizations.bundle\en.lproj\Localizable.strings" />
-    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowLeft.png" />
-    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowLeft%402x.png" />
-    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowRight.png" />
-    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowRight%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Softeq.XToolkit.Common\Softeq.XToolkit.Common.csproj">
-      <Project>{857902A3-313D-4A7A-ABAA-96CADD8E8B5E}</Project>
-      <Name>Softeq.XToolkit.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Softeq.XToolkit.Common.iOS\Softeq.XToolkit.Common.iOS.csproj">
-      <Project>{6BCB2009-2E46-458C-BCAA-AFC27A631924}</Project>
-      <Name>Softeq.XToolkit.Common.iOS</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
