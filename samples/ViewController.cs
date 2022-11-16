@@ -25,7 +25,7 @@ public partial class ViewController : UIViewController
             "https://farm4.static.flickr.com/3590/3329114220_5fbc5bc92b_b.jpg"
         };
 
-        var photos = imageUrls.Select(imageUrl => new IDMPhoto(NSUrl.FromString(imageUrl))).ToArray();
+        var photos = imageUrls.Select(imageUrl => new IDMPhoto(NSUrl.FromString(imageUrl)!)).ToArray();
         var browser = new IDMPhotoBrowser(photos);
 
         OpenBrowserBtn.TouchUpInside += (sender, e) =>
