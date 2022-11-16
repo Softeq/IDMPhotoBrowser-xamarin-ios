@@ -6,6 +6,7 @@
     <SupportedOSPlatformVersion>11.2</SupportedOSPlatformVersion>
     <Platforms>iPhone;iPhoneSimulator</Platforms>
     <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <CreatePackage>false</CreatePackage>
